@@ -385,7 +385,7 @@ Function file_transfer
     }
     elseif(2 -eq $option)
     {
-    $filename = Read-Host "Please Enter the Filename  "
+    $filename = Read-Host -Prompt "Please Enter the Filename  "
     $hostname = Read-Host -Prompt "Enter the IP/FQDN of the SDDC manager "
     $username = Read-Host -Prompt "Enter the username of the SDDC manager "
     scp.exe $folder/$filename $username@$hostname":/home/vcf/testfolder"
