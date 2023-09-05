@@ -373,7 +373,7 @@ Function VersionMenu
 Function file_transfer
 {
     Write-Host " This tool is used to transfer either all downloaded files inside the bundles folder or a specific file inside that folder to /nfs/vmware/vcf/nfs-mount/bundle/migration_artifacts" -ForegroundColor Yellow
-    Write-Host " FOR TESTING PURPOSES  the destination is /home/vcf/testfolder"  -ForegroundColor Yellow
+    #Write-Host " FOR TESTING PURPOSES  the destination is /home/vcf/testfolder"  -ForegroundColor Yellow
     $option= Read-Host "Select 1 for transferring all files or 2 for a specific file transfer"
     $folder= "./$Global:mrVersion/bundles"
 
@@ -381,14 +381,14 @@ Function file_transfer
     {
     $hostname = Read-Host -Prompt "Enter the IP/FQDN of the SDDC manager"
     $username = Read-Host -Prompt "Enter the username of the SDDC manager"
-    scp.exe $folder/* $username@$hostname":/home/vcf/testfolder"
+    scp.exe $folder/* $username@$hostname":/nfs/vmware/vcf/nfs-mount/bundle/migration_artifacts"
     }
     elseif(2 -eq $option)
     {
     $filename = Read-Host -Prompt "Please Enter the Filename  "
     $hostname = Read-Host -Prompt "Enter the IP/FQDN of the SDDC manager "
     $username = Read-Host -Prompt "Enter the username of the SDDC manager "
-    scp.exe $folder/$filename $username@$hostname":/home/vcf/testfolder"
+    scp.exe $folder/$filename $username@$hostname":/nfs/vmware/vcf/nfs-mount/bundle/migration_artifacts"
     }
 }
 
