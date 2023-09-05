@@ -372,7 +372,8 @@ Function VersionMenu
 
 Function file_transfer
 {
-    $option= Read-Host "Select 1 for all bundle transfer or 2 for specific file transfer"
+    Write-Host " This tool is used to transfer either all bundles or a specific file from the local machine's bundle folder to the migration artifact folder inside SDDC " -ForegroundColor Yellow
+    $option= Read-Host "Select 1 for transferring all file or 2 for a specific file transfer"
     if (1 -eq $option)
     {
     $folder= "./$Global:mrVersion/bundles"
